@@ -5,11 +5,11 @@ Various bash scripts to be used in the User Scripts plugin in Unraid
 
 ## Appdata Backup Scripts
 
-## Usage
+### Usage
 
 Create a new User script and paste script text in
 
-# Example Cron Schedules
+### Example Cron Schedules
 
 Cron schedule to run script every morning at 5:00am
 
