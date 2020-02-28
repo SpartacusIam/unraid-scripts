@@ -17,7 +17,8 @@ This script creates an invididual tar file for each appdata directory that you d
 
 This script stops the plex container and copies the main plex db file to a backup location of your choosing before restarting the container.
 
-### Usage
+
+## Usage
 
 Create a new User script and paste script text in
 
