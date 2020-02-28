@@ -1,0 +1,48 @@
+#!/bin/bash
+
+#--DEFINE VARIABLES--#
+
+# Set Appdata Directory
+appdataDirectory='/path/to/your/docker/appdata/'
+
+# Set Backup Directory
+backupDirectory='/path/to/your/backup/director/'
+
+# Set Number of Days to Keep Backups 
+days=14
+
+
+#--START SCRIPT--#
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "AppData Backup" -d "Backup of ALL Appdata starting."
+
+now="$(date +"%Y-%m-%d"@%H.%M)" 
+mkdir ""$backupDirectory""$now""
+
+for path in "$appdataDirectory"*
+
+do
+    name="$(basename "$path")"
+    path=""$appdataDirectory""$name""
+ 
+    cRunning="$(docker ps -a --format '{{.Names}}' -f status=running)"
+
+    if echo $cRunning | grep -iqF $name; then
+    echo "Stopping $name"
+        docker stop -t 60 "$name"
+        tar cWfC "./$name.tar" "$(dirname "$path")" "$(basename "$path")"
+    echo "Starting $name"
+        docker start "$name"
+    else
+        tar cWfC "./$name.tar" "$(dirname "$path")" "$(basename "$path")"
+    echo "$name was stopped before backup, ignoring startup"
+    fi
+ 
+    cp -a "$name.tar" ""$backupDirectory""$now""
+    rm "$name.tar"
+done
+
+#Cleanup Old Backups
+find "$backupDirectory"* -type d -mtime +"$days" | xargs rm -rf
+
+#Stop Notification
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "AppData Backup" -d "Backup of ALL Appdata complete."
