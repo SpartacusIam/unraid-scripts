@@ -4,13 +4,13 @@
 
 # Containers to backup and their appdata paths
 list=(
-    container01_name    /path/to/docker/appdata/container01_name
-    container02_name    /path/to/docker/appdata/container01_name
-    container03_name    /path/to/docker/appdata/container01_name
+    container01_name    /PATH/TO/YOUR/DOCKER/APPDATA/container01_name
+    container02_name    /PATH/TO/YOUR/DOCKER/APPDATA/container01_name
+    container03_name    /PATH/TO/YOUR/DOCKER/APPDATA/container01_name
 )
 
 # Set Backup Directory
-backupDirectory='/path/to/your/backup/directory/'
+backupDirectory='/PATH/TO/YOUR/BACKUP/DIRECTORY/'
 
 # Set Number of Days to Keep Backups 
 days=60
