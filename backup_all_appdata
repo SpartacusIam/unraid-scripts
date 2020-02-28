@@ -3,10 +3,10 @@
 #--DEFINE VARIABLES--#
 
 # Set Appdata Directory
-appdataDirectory='/path/to/your/docker/appdata/'
+appdataDirectory='/PATH/TO/YOUR/DOCKER/APPDATA'
 
 # Set Backup Directory
-backupDirectory='/path/to/your/backup/director/'
+backupDirectory='/PATH/TO/YOUR/BACKUP/DIRECTORY/'
 
 # Set Number of Days to Keep Backups 
 days=14
