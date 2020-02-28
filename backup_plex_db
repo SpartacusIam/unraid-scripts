@@ -1,0 +1,4 @@
+#!/bin/bash
+docker stop plex
+cp -a /PATH/TO/YOUR/DOCKER/appdata/plex/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.db /PATH/TO/YOUR/BACKUP/DIRECTORY/plexdb/com.plexapp.plugins.library-$(date +"%Y-%m-%d@%H.%M").db
+docker start plex
