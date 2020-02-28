@@ -10,7 +10,7 @@ list=(
 )
 
 # Set Backup Directory
-backupDirectory='/path/to/backup/directory/'
+backupDirectory='/path/to/your/backup/directory/'
 
 # Set Number of Days to Keep Backups 
 days=60
