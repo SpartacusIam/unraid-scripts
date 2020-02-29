@@ -13,7 +13,7 @@ list=(
 backupDirectory='/PATH/TO/YOUR/BACKUP/DIRECTORY/'
 
 # Set Number of Days to Keep Backups 
-days=60
+days=15
  
 #--START SCRIPT--#
 /usr/local/emhttp/plugins/dynamix/scripts/notify -s "AppData Backup" -d "Backup of ALL Appdata starting."
