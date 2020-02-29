@@ -9,7 +9,7 @@ appdataDirectory='/PATH/TO/YOUR/DOCKER/APPDATA'
 backupDirectory='/PATH/TO/YOUR/BACKUP/DIRECTORY/'
 
 # Set Number of Days to Keep Backups 
-days=14
+days=60
 
 
 #--START SCRIPT--#
