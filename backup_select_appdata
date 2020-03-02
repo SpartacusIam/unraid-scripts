@@ -20,7 +20,7 @@ days=15
 
 now="$(date +"%Y-%m-%d"@%H.%M)"
  
-mkdir ""$backupDirectory""$now""
+mkdir """$backupDirectory"""$now""
  
 for (( i = 0; i < ${#list[@]}; i += 2 ))
 do
@@ -39,12 +39,12 @@ do
     echo "$name was stopped before backup, ignoring startup"
     fi
  
-    cp -a "$name.tar" ""$backupDirectory""$now""
+    cp -a "$name.tar" """$backupDirectory"""$now""
     rm "$name.tar"
 done
 
 #Cleanup Old Backups
-find "$backupDirectory"* -type d -mtime +"$days" | xargs rm -rf
+find "$backupDirectory"* -type d -mtime +"$days" -exec rm -rf {} +
 
 #Stop Notification
-/usr/local/emhttp/plugins/dynamix/scripts/notify -s "AppData Backup" -d "Backup of CRITICAL Appdata complete."
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "AppData Backup" -d "Backup of ALL Appdata complete."
