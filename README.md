@@ -19,7 +19,7 @@ This script stops the plex container and copies the main plex db file to a backu
 
 ### backup_flashdrive
 
-This script creates a dated tar first of the Unraid USB flash drive.
+This script creates a dated tar file of the Unraid USB flash drive.
 
 ## Usage
 
