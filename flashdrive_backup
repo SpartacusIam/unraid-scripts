@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#--DEFINE VARIABLES--#
+
+# Set Flashdrive Backup Directory
+flashbackupDirectory='/PATH/TO/YOUR/BACKUP/DIRECTORY/'
+
+# Set Number of Days to Keep Backups 
+days=365
+
+
+#--START SCRIPT--#
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "FlashDrive Backup" -d "Backup of FlashDrive starting."
+
+tar cfW """$flashbackupDirectory"""flash$(date +"%Y-%m-%d")"".tar /boot
+
+#Cleanup Old Backups
+find "$flashbackupDirectory"* -type f -mtime +"$days" -exec rm -rf {} +
+
+#Stop Notification
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "FlashDrive Backup" -d "Backup of FlashDrive complete."
