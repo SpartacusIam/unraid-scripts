@@ -31,16 +31,16 @@ do
     if echo $cRunning | grep -iqF $name; then
     echo "Stopping $name"
         docker stop -t 60 "$name"
+        cd ""$backupDirectory""$now""
         tar cWfC "./$name.tar" "$(dirname "$path")" "$(basename "$path")"
     echo "Starting $name"
         docker start "$name"
     else
+        cd ""$backupDirectory""$now""
         tar cWfC "./$name.tar" "$(dirname "$path")" "$(basename "$path")"
     echo "$name was stopped before backup, ignoring startup"
     fi
- 
-    cp -a "$name.tar" """$backupDirectory"""$now""
-    rm "$name.tar"
+
 done
 
 #Cleanup Old Backups
