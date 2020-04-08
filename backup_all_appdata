@@ -3,7 +3,7 @@
 #--DEFINE VARIABLES--#
 
 # Set Appdata Directory
-appdataDirectory='/PATH/TO/YOUR/DOCKER/APPDATA'
+appdataDirectory='/PATH/TO/YOUR/DOCKER/APPDATA/'
 
 # Set Backup Directory
 backupDirectory='/PATH/TO/YOUR/BACKUP/DIRECTORY/'
