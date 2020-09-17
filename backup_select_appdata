@@ -9,7 +9,7 @@ list=(
     container03_name    /PATH/TO/YOUR/DOCKER/APPDATA/container01_name
 )
 
-# Set Backup Directory
+# Set Backup Directory (must include trailing /)
 backupDirectory='/PATH/TO/YOUR/BACKUP/DIRECTORY/'
 
 # Set Number of Days to Keep Backups 
