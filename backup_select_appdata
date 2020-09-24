@@ -4,9 +4,9 @@
 
 # Containers to backup and their appdata paths
 list=(
-    container01_name    /PATH/TO/YOUR/CONTAINER01/APPDATA/
-    container02_name    /PATH/TO/YOUR/CONTAINER02/APPDATA/
-    container03_name    /PATH/TO/YOUR/CONTAINER03/APPDATA/
+    container01_name    /PATH/TO/YOUR/CONTAINER01/APPDATA
+    container02_name    /PATH/TO/YOUR/CONTAINER02/APPDATA
+    container03_name    /PATH/TO/YOUR/CONTAINER03/APPDATA
 )
 
 # Set Backup Directory (must include trailing /)
