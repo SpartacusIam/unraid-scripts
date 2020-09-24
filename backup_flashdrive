@@ -12,6 +12,7 @@ days=365
 #--START SCRIPT--#
 /usr/local/emhttp/plugins/dynamix/scripts/notify -s "FlashDrive Backup" -d "Backup of FlashDrive starting."
 
+""$flashbackupDirectory""
 tar cfW """$flashbackupDirectory"""flash$(date +"%Y-%m-%d")"".tar /boot
 
 #Cleanup Old Backups
