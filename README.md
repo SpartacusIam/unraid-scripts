@@ -17,7 +17,7 @@ This script creates a dated tar file of the Unraid USB flash drive.
 
 This script stops the plex container and copies the main plex db file to a backup location of your choosing before restarting the container.
 
-### backup_all_appdata
+### backup_plexdata
 
 This script creates an individual tar.gz file for all the plexdata that you redirect to be outside of your regular plex appdata directory.  This is useful for making your appdata backups much smaller as to not capture directories like Media and Transcoder Cache that can take up huge amounts of space but is not mission critical for most.
 
