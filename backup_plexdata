@@ -18,7 +18,7 @@ days=45
 now="$(date +"%Y-%m-%d"@%H.%M)" 
 mkdir ""$backupDirectory""$now""
 
-#Plexdata Backup
+#Plexdata Backup (excluding Transcode directory from backups)
 cd ""$backupDirectory""$now""
 tar -czvf plexdata-"$now".tar.gz --exclude "$plexdataDirectory"Transcode "$plexdataDirectory"
 
