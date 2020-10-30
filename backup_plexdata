@@ -13,7 +13,7 @@ days=45
 
 
 #--START SCRIPT--#
-/usr/local/emhttp/plugins/dynamix/scripts/notify -s "PlexData Backup" -d "Backup of Plexdata starting."
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "Plexdata Backup" -d "Backup of Plexdata starting."
 
 now="$(date +"%Y-%m-%d"@%H.%M)" 
 mkdir ""$backupDirectory""$now""
@@ -26,4 +26,4 @@ tar -czvf plexdata-"$now".tar.gz --exclude "$plexdataDirectory"Transcode "$plexd
 find "$backupDirectory"* -type d -mtime +"$days" | xargs rm -rf
 
 #Stop Notification
-/usr/local/emhttp/plugins/dynamix/scripts/notify -s "PlexData Backup" -d "Backup of Plexdata complete."
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "Plexdata Backup" -d "Backup of Plexdata complete."
