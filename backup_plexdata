@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#--DEFINE VARIABLES--#
+
+# Set Plexdata Directory (must include trailing /)
+plexdataDirectory='/PATH/TO/YOUR/PLEXDATA/'
+
+# Set Backup Directory (must include trailing /)
+backupDirectory='/PATH/TO/YOUR/BACKUP/DIRECTORY/'
+
+# Set Number of Days to Keep Backups 
+days=45
+
+
+#--START SCRIPT--#
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "PlexData Backup" -d "Backup of Plexdata starting."
+
+now="$(date +"%Y-%m-%d"@%H.%M)" 
+mkdir ""$backupDirectory""$now""
+
+#Plexdata Backup
+cd ""$backupDirectory""$now""
+tar -czvf plexdata-"$now".tar.gz --exclude "$plexdataDirectory"Transcode "$plexdataDirectory"
+
+#Cleanup Old Backups
+find "$backupDirectory"* -type d -mtime +"$days" | xargs rm -rf
+
+#Stop Notification
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "PlexData Backup" -d "Backup of Plexdata complete."
