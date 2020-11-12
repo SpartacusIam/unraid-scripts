@@ -1,3 +1,5 @@
+## **PLEASE NOTE**  These scripts are tested by me for my use cases.  They very well may work for you but I have not thoroughly tested these scripts under all conditions.  Please test and use at your own risk.
+
 # Unraid User Scripts
 
 Various bash scripts to be used in the User Scripts plugin in Unraid
