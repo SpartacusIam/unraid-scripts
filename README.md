@@ -1,4 +1,4 @@
-## **PLEASE NOTE**  These scripts are tested by me for my use cases.  They very well may work for you but I have not thoroughly tested these scripts under all conditions.  Please test and use at your own risk.
+## Please note that these scripts are tested by me for my use cases.  They very well may work for you but I have not thoroughly tested these scripts under all conditions.  Please test and use at your own risk.
 
 # Unraid User Scripts
 
