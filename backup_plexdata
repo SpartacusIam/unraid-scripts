@@ -20,7 +20,7 @@ mkdir ""$backupDirectory""$now""
 
 #Plexdata Backup (excluding Transcode directory from backups)
 cd ""$backupDirectory""$now""
-tar -czvf plexdata-"$now".tar.gz --exclude "$plexdataDirectory"Transcode "$plexdataDirectory"
+tar -czf plexdata-"$now".tar.gz --exclude "$plexdataDirectory"Transcode "$plexdataDirectory"
 
 #Cleanup Old Backups
 find "$backupDirectory"* -type d -mtime +"$days" | xargs rm -rf
