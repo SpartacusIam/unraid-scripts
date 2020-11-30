@@ -1,5 +1,9 @@
 ## Please note that these scripts are tested by me for my use cases.  They very well may work for you but I have not thoroughly tested these scripts under all conditions.  Please test and use at your own risk.
 
+# Support
+
+If you find these scripts helpful, consider buying me a beer to show your appreciation.  https://www.buymeacoffee.com/iamspartacus
+
 # Unraid User Scripts
 
 Various bash scripts to be used in the User Scripts plugin in Unraid
