@@ -2,7 +2,7 @@
 
 # Support
 
-If you find these scripts helpful, consider buying me a beer to show your appreciation.  https://www.buymeacoffee.com/iamspartacus
+If you find these scripts helpful, consider buying me a coffee or beer to show your appreciation.  https://www.buymeacoffee.com/iamspartacus
 
 # Unraid User Scripts
 
