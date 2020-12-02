@@ -14,8 +14,8 @@ days=365
 /usr/local/emhttp/plugins/dynamix/scripts/notify -s "Plex DB Backup" -d "Backup of Plex DB's starting."
 
 docker stop plex
-cp -a '"$plexdbDirectory"com.plexapp.plugins.library.db' '"$backupDirectory"com.plexapp.plugins.library-$(date +"%Y-%m-%d@%H.%M").db'
-cp -a '"$plexdbDirectory"com.plexapp.plugins.library.blobs.db' '"$backupDirectory"com.plexapp.plugins.library.blobs-$(date +"%Y-%m-%d@%H.%M").db'
+cp -a "$plexdbDirectory"com.plexapp.plugins.library.db "$backupDirectory"com.plexapp.plugins.library-$(date +"%Y-%m-%d@%H.%M").db
+cp -a "$plexdbDirectory"com.plexapp.plugins.library.blobs.db "$backupDirectory"com.plexapp.plugins.library.blobs-$(date +"%Y-%m-%d@%H.%M").db
 docker start plex
 
 #Cleanup Old Backups
