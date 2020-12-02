@@ -13,18 +13,10 @@ days=365
 #--START SCRIPT--#
 /usr/local/emhttp/plugins/dynamix/scripts/notify -s "Plex DB Backup" -d "Backup of Plex DB's starting."
 
-
-# Stop Plex container
 docker stop plex
-
-# Copy Main DB to Backup Location
 cp -a '"$plexdbDirectory"com.plexapp.plugins.library.db' '"$backupDirectory"com.plexapp.plugins.library-$(date +"%Y-%m-%d@%H.%M").db'
-
-# Copy Blogs DB to Backup Location
 cp -a '"$plexdbDirectory"com.plexapp.plugins.library.blobs.db' '"$backupDirectory"com.plexapp.plugins.library.blobs-$(date +"%Y-%m-%d@%H.%M").db'
-
-# Start Plex container
 docker start plex
 
-#Start Notification
+#Stop Notification
 /usr/local/emhttp/plugins/dynamix/scripts/notify -s "Plex DB Backup" -d "Backup of Plex DB's complete."
