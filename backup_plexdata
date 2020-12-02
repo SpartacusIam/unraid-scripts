@@ -21,7 +21,7 @@ mkdir ""$backupDirectory""$now""
 #Plexdata Backup (excluding Transcode directory from backups)
 cd ""$backupDirectory""$now""
 tar -cf plexdata-"$now".tar --exclude "$plexdataDirectory"Transcode "$plexdataDirectory"
-#Uncomment below line to use pigz to compress the file afterwards and delete the original .tar file (will use max CPU threads unless otherwise specified)
+#Uncomment below line to use pigz to compress the file afterwards and delete the original .tar file (will use max CPU threads unless otherwise specified with -p#)
 #pigz -9 plexdata-"$now".tar
 
 #Cleanup Old Backups
