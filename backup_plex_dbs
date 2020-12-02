@@ -1,5 +1,30 @@
 #!/bin/bash
+
+# Set Appdata Directory (must include trailing /)
+plexdbDirectory='/PATH/TO/YOUR/PLEX/DATABASES/DIRECTORY/'
+
+# Set Backup Directory (must include trailing /)
+backupDirectory='/PATH/TO/YOUR/BACKUP/DIRECTORY/'
+
+# Set Number of Days to Keep Backups 
+days=365
+
+
+#--START SCRIPT--#
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "Plex DB Backup" -d "Backup of Plex DB's starting."
+
+
+# Stop Plex container
 docker stop plex
-cp -a /PATH/TO/YOUR/DOCKER/APPDATA/plex/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.db /PATH/TO/YOUR/BACKUP/DIRECTORY/plexdb/com.plexapp.plugins.library-$(date +"%Y-%m-%d@%H.%M").db
-cp -a /PATH/TO/YOUR/DOCKER/APPDATA/plex/Library/Application\ Support/Plex\ Media\ Server/Plug-in\ Support/Databases/com.plexapp.plugins.library.blobs.db /PATH/TO/YOUR/BACKUP/DIRECTORY/plexdb/com.plexapp.plugins.library.blobs-$(date +"%Y-%m-%d@%H.%M").db
+
+# Copy Main DB to Backup Location
+cp -a '"$plexdbDirectory"com.plexapp.plugins.library.db' '"$backupDirectory"com.plexapp.plugins.library-$(date +"%Y-%m-%d@%H.%M").db'
+
+# Copy Blogs DB to Backup Location
+cp -a '"$plexdbDirectory"com.plexapp.plugins.library.blobs.db' '"$backupDirectory"com.plexapp.plugins.library.blobs-$(date +"%Y-%m-%d@%H.%M").db'
+
+# Start Plex container
 docker start plex
+
+#Start Notification
+/usr/local/emhttp/plugins/dynamix/scripts/notify -s "Plex DB Backup" -d "Backup of Plex DB's complete."
